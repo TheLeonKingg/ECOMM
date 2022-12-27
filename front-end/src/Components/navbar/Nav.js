@@ -1,4 +1,5 @@
 import React from "react";
+import './Nav.css'
 import { Link, useNavigate } from "react-router-dom";
 
 const Nav = () => {
