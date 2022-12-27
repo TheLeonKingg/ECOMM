@@ -19,7 +19,7 @@ const Storage = multer.diskStorage({
 const upload = multer({ storage: Storage }).single('file')
 
 app.post("/signup", async (req,res)=>{
-    let user = new User(req.body);
+    let user = new User(req.body.toLowerCase());
     let result = await user.save();
     result = result.toObject();
     delete result.password;
@@ -28,7 +28,7 @@ app.post("/signup", async (req,res)=>{
 
 app.post('/login', async(req,res)=>{
     if(req.body.email && req.body.password){
-        let user = await User.findOne(req.body).select("-password");
+        let user = await User.findOne(req.body.toLowerCase()).select("-password");
         if(user){
             res.send(user)
         }else{
@@ -42,10 +42,10 @@ app.post('/login', async(req,res)=>{
 
 app.post('/add-product',upload, async (req,res)=>{
     let product = new Product({
-        name:req.body.name,
-        price:req.body.price,
-        category:req.body.category,
-        company:req.body.company,
+        name:req.body.name.toLowerCase(),
+        price:req.body.price.toLowerCase(),
+        category:req.body.category.toLowerCase(),
+        company:req.body.company.toLowerCase(),
         image:req.file.filename
     });
     let result = await product.save();
@@ -80,10 +80,10 @@ app.put('/updateProduct/:id', upload, async(req,res)=>{
         const result = await Product.updateOne(
             {_id:req.params.id},
             {$set:{ 
-                name:req.body.name,
-                price:req.body.price,
-                category:req.body.category,
-                company:req.body.company,
+                name:req.body.name.toLowerCase(),
+                price:req.body.price.toLowerCase(),
+                category:req.body.category.toLowerCase(),
+                company:req.body.company.toLowerCase(),
                 image:req.file.filename}}
         )
         if(result){
@@ -96,7 +96,12 @@ app.put('/updateProduct/:id', upload, async(req,res)=>{
     else{
         const result = await Product.updateOne(
             {_id:req.params.id},
-            {$set:req.body}
+            {$set:{ 
+                name:req.body.name.toLowerCase(),
+                price:req.body.price.toLowerCase(),
+                category:req.body.category.toLowerCase(),
+                company:req.body.company.toLowerCase(),
+            }}
         )
         if(result){
             res.send(result);
@@ -105,6 +110,16 @@ app.put('/updateProduct/:id', upload, async(req,res)=>{
             res.send({result:"No Record Found"});
         }
     }
+})
+
+app.get('/search/:key' , async (req,res)=>{
+    let result = await Product.find({
+        "$or":[
+            {name:{$regex:req.params.key.toLowerCase()}},
+            {company:{$regex:req.params.key.toLowerCase()}}
+        ]
+    })
+    res.send(result)
 })
 
 app.listen(5000);
