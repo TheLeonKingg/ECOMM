@@ -19,7 +19,11 @@ const Storage = multer.diskStorage({
 const upload = multer({ storage: Storage }).single('file')
 
 app.post("/signup", async (req,res)=>{
-    let user = new User(req.body.toLowerCase());
+    let user = new User({
+        name:req.body.name.toLowerCase(),
+        email:req.body.email.toLowerCase(),
+        password:req.body.password
+    });
     let result = await user.save();
     result = result.toObject();
     delete result.password;
@@ -28,7 +32,12 @@ app.post("/signup", async (req,res)=>{
 
 app.post('/login', async(req,res)=>{
     if(req.body.email && req.body.password){
-        let user = await User.findOne(req.body.toLowerCase()).select("-password");
+        let loginData = {
+            email:req.body.email.toLowerCase(),
+            password:req.body.password
+        }
+
+        let user = await User.findOne(loginData).select("-password");
         if(user){
             res.send(user)
         }else{
