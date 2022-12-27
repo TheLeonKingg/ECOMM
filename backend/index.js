@@ -54,7 +54,57 @@ app.post('/add-product',upload, async (req,res)=>{
 
 app.get('/getAllProducts', async(req,res)=>{
     let data = await Product.find();
-    res.send(data);
+    if(data.length>0){
+        res.send(data);
+    }else{
+        res.send({result:"No Product Found"})
+    }
+})
+
+app.delete('/delete-product/:id', async (req,res)=>{
+    const result = await Product.deleteOne({_id:req.params.id});
+    res.send(result);
+})
+
+app.get('/product/:id', async (req,res)=>{
+    const result = await Product.findOne({_id:req.params.id});
+    if(result){
+        res.send(result);
+    }else{
+        res.send({result:"No Record Found"});
+    }
+})
+
+app.put('/updateProduct/:id', upload, async(req,res)=>{
+    if(req.file){
+        const result = await Product.updateOne(
+            {_id:req.params.id},
+            {$set:{ 
+                name:req.body.name,
+                price:req.body.price,
+                category:req.body.category,
+                company:req.body.company,
+                image:req.file.filename}}
+        )
+        if(result){
+            res.send(result);
+        }
+        else{
+            res.send({result:"No Record Found"});
+        }
+    }
+    else{
+        const result = await Product.updateOne(
+            {_id:req.params.id},
+            {$set:req.body}
+        )
+        if(result){
+            res.send(result);
+        }
+        else{
+            res.send({result:"No Record Found"});
+        }
+    }
 })
 
 app.listen(5000);
