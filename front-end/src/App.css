@@ -1,43 +1,21 @@
-.nav-ul{
+.nav-ul {
   padding: 16px;
   margin: 0;
   display: flex;
   background-color: #72bff0;
   list-style-type: none;
 }
-.nav-ul li a{
+.nav-ul li a {
   text-decoration: none;
   color: #fff;
 }
-.input-fields{
-  text-align: center;
+
+.nav-link-right li a {
+  position: relative;
+  left: 87em;
 }
 
-.nav-link-right li a{
-  position: relative;
-  left:87em;
-}
-.input-fields input{
-    display: block;
-    padding: 10px;
-    margin: 25px;
-    width: 300px;
-    border: 1px solid skyblue;
-    border-radius: 5px;
-    position: relative;
-    left:40%;
-    right:50%;
-}
-.signup-btn{
-  padding: 7px;
-    border: 1px solid #1c1c59;
-    border-radius: 10px;
-    background-color: skyblue;
-    color: white;
-    width: 76px;
-    font-size: 15px;
-}
-.footer{
+.footer {
   position: absolute;
   background-color: #72bff0;
   bottom: 0;

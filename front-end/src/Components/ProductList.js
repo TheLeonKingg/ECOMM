@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
 
-const ProductList = ()=>{
+const ProductList = () => {
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
+
+    const getProducts = async () => {
+        let result = await fetch('http://localhost:5000/getAllProducts')
+        result = await result.json()
+        setProducts(result)
+
+    }
+    console.warn("products")
     return (
-        <div>
-            <h1>Hemlo Product Listing Page</h1>
-        </div>
+        <div>ProductList</div>
     )
 }
 
-export default ProductList;
+export default ProductList
