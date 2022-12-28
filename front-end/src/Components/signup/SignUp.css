@@ -27,6 +27,22 @@
   width: 76px;
   font-size: 15px;
 }
+.reset-btn {
+  padding: 7px;
+  border: 1px solid #1c1c59;
+  border-radius: 10px;
+  background-color: skyblue;
+  color: white;
+  width: 76px;
+  font-size: 15px;
+}
 .demo {
-  height: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.text-center {
+  background-color: blueviolet;
+}
+.kosh {
+  text-align: center;
 }
