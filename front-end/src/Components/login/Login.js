@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { Form, useNavigate } from 'react-router-dom'
+import { Card, CardHeader, CardBody, CardTitle, CardText, Container } from "reactstrap";
+import "./login.css"
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -29,15 +31,35 @@ const Login = () => {
     //     }
     // })
     return (
-        <div className="input-fields">
-            <h1>Login</h1>
+        <div className="login-fields">
+            <Container>
+                <h1>Login   </h1></Container>
+
             <input type="text" placeholder="Enter Email"
                 value={email} onChange={(e) => setEmail(e.target.value)}></input>
             <input type="password" placeholder="Enter Password"
                 value={password} onChange={(e) => setPassword(e.target.value)}></input>
-            <button className="login-btn" type="button" onClick={collectData}>Login</button>
+            <button className="login-button" type="button" onClick={collectData}>Login</button>
+
         </div>
     )
 }
 
-export default Login; 
+
+export default Login;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

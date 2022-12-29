@@ -3,10 +3,10 @@
 }
 .input-fields {
   text-align: center;
-  color: white;
+  color: black;
   height: 632px;
   padding-top: 0;
-  background-color: black;
+  background-color: white;
 }
 .input-fields input {
   display: block;
