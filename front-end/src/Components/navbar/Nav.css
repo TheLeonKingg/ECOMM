@@ -14,3 +14,31 @@
   position: relative;
   left: 87em;
 }
+.signup {
+  margin-right: -15px;
+  border-radius: 8px;
+  background-color: darkgreen;
+  color: white;
+  height: 35px;
+  border-width: 0;
+}
+
+.login {
+  margin-right: 0x;
+  border-radius: 5px;
+  background-color: #0047ab;
+  color: white;
+  height: 35px;
+  border-width: 0;
+}
+.signup:hover,
+.signup:active {
+  background-color: white;
+  transition: 0.7s;
+  color: darkgreen;
+}
+.login:hover {
+  background-color: white;
+  color: #0047ab;
+  transition: 0.7s;
+}

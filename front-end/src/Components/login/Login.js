@@ -35,7 +35,7 @@ const Login = () => {
                 value={email} onChange={(e) => setEmail(e.target.value)}></input>
             <input type="password" placeholder="Enter Password"
                 value={password} onChange={(e) => setPassword(e.target.value)}></input>
-            <button className="signup-btn" type="button" onClick={collectData}>Login</button>
+            <button className="login-btn" type="button" onClick={collectData}>Login</button>
         </div>
     )
 }

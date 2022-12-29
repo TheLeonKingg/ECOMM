@@ -1,11 +1,12 @@
 .card {
-  background-color: black;
+  background-color: white;
 }
 .input-fields {
   text-align: center;
   color: white;
   height: 632px;
   padding-top: 0;
+  background-color: black;
 }
 .input-fields input {
   display: block;
@@ -26,8 +27,13 @@
   color: white;
   width: 76px;
   font-size: 15px;
+  margin: 2px;
 }
-.reset-btn {
+.signup-btn:hover {
+  background-color: darkgreen;
+}
+
+.reset {
   padding: 7px;
   border: 1px solid #1c1c59;
   border-radius: 10px;
@@ -36,13 +42,6 @@
   width: 76px;
   font-size: 15px;
 }
-.demo {
-  align-items: center;
-  justify-content: center;
-}
-.text-center {
-  background-color: blueviolet;
-}
-.kosh {
-  text-align: center;
+.reset:hover {
+  background-color: darkred;
 }

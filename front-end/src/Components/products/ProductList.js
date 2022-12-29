@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { Button } from 'reactstrap'
 import "./productlist.css"
 
 const ProductList = () => {
@@ -13,6 +14,18 @@ const ProductList = () => {
             .then((response) => setData(response.data))
     }, [])
 
+    const deleteOne = (id) => {
+        console.warn(id)
+
+    }
+
+
+
+
+
+
+
+
     return (
         <div className='product-list'>
             <h3> ProductList</h3>
@@ -22,6 +35,7 @@ const ProductList = () => {
                 <li>Name</li>
                 <li>price</li>
                 <li>Category</li>
+                <li>Action</li>
             </ul>
 
             {
@@ -32,6 +46,7 @@ const ProductList = () => {
                         <li>{item.name}</li>
                         <li>{item.price}</li>
                         <li>{item.category}</li>
+                        <li><Button className='button' onClick={() => deleteOne(item._id)} color="secondary" outline>Delete</Button></li>
                     </ul>
                 )
             }

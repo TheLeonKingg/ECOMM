@@ -5,9 +5,21 @@
 .product-list ul li {
   display: inline-block;
   width: 150px;
-  border: 1px solid skyblue;
-  padding: 5px;
+  border: 1px solid rgb(32, 181, 240);
+  padding: 10px;
+  height: 30px;
 }
 .product-list ul {
-  margin: 0px;
+  margin: 0;
+}
+.button {
+  border: 1px solid black;
+  color: black;
+  background-color: #94d3a2;
+  border-radius: 10px;
+  width: 90px;
+}
+.button:hover {
+  background-color: white;
+  transition: 0.7s;
 }
