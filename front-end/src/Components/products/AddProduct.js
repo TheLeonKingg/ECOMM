@@ -8,6 +8,7 @@ const AddProduct = () => {
   const [company, setCompany] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const navigate = useNavigate();
 
 
   const collectData = async (e) => {
@@ -31,12 +32,15 @@ const AddProduct = () => {
       console.log(response.data);
       if (response.data) {
         alert(`${response.data.name} added successfully`);
+        navigate('/');
+
+
       }
     });
   }
 
   return (
-    <form action="/upload" enctype="multipart/form-data" method="post" onSubmit={collectData}>
+    <form action="/upload" encType="multipart/form-data" method="post" onSubmit={collectData}>
       <div className="input-fields" >
 
         <h1>Add Product</h1>

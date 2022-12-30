@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import "./productlist.css"
 
 const ProductList = () => {
@@ -12,16 +13,30 @@ const ProductList = () => {
         axios.get("http://localhost:5000/getAllProducts", config,)
 
             .then((response) => setData(response.data))
+
     }, [])
 
 
-    const deleteProduct = async (id) => {
-        let result = await fetch(`http://localhost:5000/delete-product/${id}`,
-            {
-                method: "Delete",
-                headers: { 'authorization': token }
+    const deleteProduct = (e, _id) => {
+        e.preventDefault()
+        const thisClicked = e.currentTarget;
+        thisClicked.innerText = "Deleting"
+
+        const token = JSON.parse(localStorage.getItem('user')).auth;
+        const config = { headers: { 'authorization': token }, };
+
+        axios.delete(`http://localhost:5000/delete-product/${_id}`, config)
+
+            .then(res => {
+                console.log(res);
+                window.location.reload();
+
+
+
             })
-        result = await result.json()
+
+
+
     }
 
 
@@ -45,7 +60,7 @@ const ProductList = () => {
                     <li>{item.name}</li>
                     <li>{item.price}</li>
                     <li>{item.category}</li>
-                    <li><button className='button' onClick={() => deleteProduct(item._id)}>Delete</button></li>
+                    <li><button type='button' className='button' onClick={(e) => deleteProduct(e, item._id)}>Delete</button></li>
                 </ul>
             )
             }
