@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Button } from 'reactstrap'
 import "./productlist.css"
 
 const ProductList = () => {
@@ -10,20 +9,20 @@ const ProductList = () => {
     const config = { headers: { 'authorization': token }, };
 
     useEffect(() => {
-        axios.get("http://localhost:5000/getAllProducts", config)
+        axios.get("http://localhost:5000/getAllProducts", config,)
+
             .then((response) => setData(response.data))
     }, [])
 
-    const deleteOne = (id) => {
-        console.warn(id)
 
+    const deleteProduct = async (id) => {
+        let result = await fetch(`http://localhost:5000/delete-product/${id}`,
+            {
+                method: "Delete",
+                headers: { 'authorization': token }
+            })
+        result = await result.json()
     }
-
-
-
-
-
-
 
 
     return (
@@ -38,23 +37,18 @@ const ProductList = () => {
                 <li>Action</li>
             </ul>
 
-            {
-                myData.map((item, index) =>
-                    <ul key={item}>
-                        <li>{index + 1}</li>
-                        <li>{item.image}</li>
-                        <li>{item.name}</li>
-                        <li>{item.price}</li>
-                        <li>{item.category}</li>
-                        <li><Button className='button' onClick={() => deleteOne(item._id)} color="secondary" outline>Delete</Button></li>
-                    </ul>
-                )
+
+            {myData.map((item, index) =>
+                <ul key={item._id} >
+                    <li>{index + 1}</li>
+                    <li>{item.image}</li>
+                    <li>{item.name}</li>
+                    <li>{item.price}</li>
+                    <li>{item.category}</li>
+                    <li><button className='button' onClick={() => deleteProduct(item._id)}>Delete</button></li>
+                </ul>
+            )
             }
-
-
-
-
-
         </div>
     )
 }
