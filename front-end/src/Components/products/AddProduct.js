@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const AddProduct = () => {
   const [name, setName] = useState("");
@@ -8,6 +12,9 @@ const AddProduct = () => {
   const [company, setCompany] = useState("");
   const [category, setCategory] = useState("");
   const [image, setImage] = useState("");
+  const navigate = useNavigate();
+
+
 
 
   const collectData = async (e) => {
@@ -31,12 +38,18 @@ const AddProduct = () => {
       console.log(response.data);
       if (response.data) {
         alert(`${response.data.name} added successfully`);
+
+        navigate('/');
+
+
       }
     });
   }
 
+
+
   return (
-    <form action="/upload" enctype="multipart/form-data" method="post" onSubmit={collectData}>
+    <form action="/upload" encType="multipart/form-data" method="post" onSubmit={collectData}>
       <div className="input-fields" >
 
         <h1>Add Product</h1>
@@ -50,7 +63,9 @@ const AddProduct = () => {
           value={category} onChange={(e) => setCategory(e.target.value)}></input>
         <input type="file" name="uploaded_file"
           onChange={(e) => setImage(e.target.files[0])}></input>
-        <button className="signup-btn" type="submit">Add</button>
+        <button className="signup-btn" type="submit"  >Add</button>
+        <ToastContainer />
+
       </div>
     </form>
   )

@@ -1,6 +1,7 @@
 .product-list {
   text-align: center;
   margin-top: 50px;
+ 
 }
 .product-list ul li {
   display: inline-block;
@@ -8,18 +9,20 @@
   border: 1px solid rgb(32, 181, 240);
   padding: 10px;
   height: 30px;
+ 
 }
 .product-list ul {
   margin: 0;
+
 }
 .button {
   border: 1px solid black;
   color: black;
-  background-color: #94d3a2;
+  background-color: #2ee6e6;
   border-radius: 10px;
-  width: 90px;
 }
 .button:hover {
-  background-color: white;
+  background-color: darkred;
   transition: 0.7s;
+  color: white;
 }

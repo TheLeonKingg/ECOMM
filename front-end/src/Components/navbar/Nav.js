@@ -13,11 +13,11 @@ const Nav = () => {
     return (
         <div className="demo">{
             auth ? <ul className="nav-ul">
-                <li><Link to="/">Products</Link></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><Link to="/add">Add Product</Link></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><Link to="/update">Update</Link></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><Link to="/profile">Profile</Link></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><Link onClick={logout} to="/signup">Logout ({JSON.parse(auth).name})</Link></li>
+                <li><Button className="Btn-1"><Link to="/">Products</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><Button className="Btn-1" ><Link to="/add">Add Product</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><Button className="Btn-1"><Link to="/update">Update</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><Button className="Btn-1"><Link to="/profile">Profile</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                <li><Button className="Btn-1"><Link onClick={logout} to="/signup">Logout ({JSON.parse(auth).name})</Link></Button></li>
             </ul>
                 :
                 <ul className="nav-ul nav-link-right">

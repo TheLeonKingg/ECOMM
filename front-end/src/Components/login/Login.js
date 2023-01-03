@@ -32,8 +32,7 @@ const Login = () => {
     // })
     return (
         <div className="login-fields">
-            <Container>
-                <h1>Login   </h1></Container>
+            <h1>Login   </h1>
 
             <input type="text" placeholder="Enter Email"
                 value={email} onChange={(e) => setEmail(e.target.value)}></input>
