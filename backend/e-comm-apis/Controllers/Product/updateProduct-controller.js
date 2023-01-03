@@ -6,7 +6,8 @@ module.exports.updateProduct =  async(req,res)=>{
             {_id:req.params.id},
             {$set:{ 
                 name:req.body.name.toLowerCase(),
-                price:req.body.price.toLowerCase(),
+                quantity:req.body.quantity,
+                price:req.body.price,
                 category:req.body.category.toLowerCase(),
                 company:req.body.company.toLowerCase(),
                 image:req.file.filename}}
@@ -23,7 +24,8 @@ module.exports.updateProduct =  async(req,res)=>{
             {_id:req.params.id},
             {$set:{ 
                 name:req.body.name.toLowerCase(),
-                price:req.body.price.toLowerCase(),
+                quantity:req.body.quantity,
+                price:req.body.price,
                 category:req.body.category.toLowerCase(),
                 company:req.body.company.toLowerCase(),
             }}
