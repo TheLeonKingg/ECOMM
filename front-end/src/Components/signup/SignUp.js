@@ -69,7 +69,7 @@ const SignUp = () => {
                     <input type="password" placeholder="Enter Password"
                         value={password} onChange={(e) => setPassword(e.target.value)}></input>
                     <button className="signup-btn" type="button" color="success" onClick={collectData} >Signup</button>
-                    <button onClick={resetData} className="reset" color="secondary" type="reset" outline> Reset</button>
+                    <button onClick={resetData} className="reset" color="secondary" type="reset" > Reset</button>
                 </div>
 
             </div>

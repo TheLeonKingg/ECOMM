@@ -1,11 +1,10 @@
-import axios from 'axios'
-import React from 'react'
-import { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
-import "./productlist.css"
+import axios from 'axios';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import "./productlist.css";
 
 const ProductList = () => {
-    const [myData, setData] = useState([])
+    const [myData, setData] = useState([]);
     const token = JSON.parse(localStorage.getItem('user')).auth;
     const config = { headers: { 'authorization': token }, };
 
@@ -14,7 +13,7 @@ const ProductList = () => {
 
             .then((response) => setData(response.data))
 
-    }, [])
+    }, []);
 
 
     const deleteProduct = (e, _id) => {

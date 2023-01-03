@@ -2,12 +2,14 @@
   padding: 16px;
   margin: 0;
   display: flex;
-  background-color: #72bff0;
+  background-color: #880E4F;
   list-style-type: none;
 }
 .nav-ul li a {
   text-decoration: none;
-  color: #fff;
+  color: black;
+  height: 10px;
+
 }
 
 .nav-link-right li a {
@@ -41,4 +43,16 @@
   background-color: white;
   color: #0047ab;
   transition: 0.7s;
+}
+.Btn-1{
+  background-color: white;
+  border-radius: 10px;
+  height: 30px;
+  border-color: #880E4F;
+  border: 1px solid #1c1c59;
+
+}
+.Btn-1:hover{
+  background-color: orangered;
+  color: white;
 }
