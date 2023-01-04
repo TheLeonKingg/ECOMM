@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { Button } from 'reactstrap';
 import "./productlist.css";
+import { Link } from 'react-router-dom'
 
 const ProductList = () => {
     const [myData, setData] = useState([]);
@@ -59,7 +61,9 @@ const ProductList = () => {
                     <li>{item.name}</li>
                     <li>{item.price}</li>
                     <li>{item.category}</li>
-                    <li><button type='button' className='button' onClick={(e) => deleteProduct(e, item._id)}>Delete</button></li>
+                    <li><button type='button' className='button' onClick={(e) => deleteProduct(e, item._id)}>Delete</button>
+                        <Button className='Btn-update'><Link to={"/update/" + item._id}>Update</Link></Button>
+                    </li>
                 </ul>
             )
             }

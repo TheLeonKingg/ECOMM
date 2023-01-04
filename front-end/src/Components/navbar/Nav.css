@@ -38,6 +38,7 @@
   background-color: white;
   transition: 0.7s;
   color: darkgreen;
+    
 }
 .login:hover {
   background-color: white;
@@ -53,6 +54,6 @@
 
 }
 .Btn-1:hover{
-  background-color: orangered;
+  background-color: deepskyblue;
   color: white;
 }
