@@ -5,7 +5,7 @@
   background-color: #880E4F;
   list-style-type: none;
   overflow-x:auto;
-  width: 100%;
+  width: auto;
 }
 .nav-ul li a {
   text-decoration: none;

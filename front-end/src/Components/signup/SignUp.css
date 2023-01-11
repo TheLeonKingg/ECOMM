@@ -1,24 +1,43 @@
-.card {
-  background-color: white;
+
+.Auth-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 78vh;
+  background-color: wheat;
 }
-.input-fields {
+.Auth-form {
+  align-items: center;
+  width: 420px;
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: lavenderblush;
+}
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title {
   text-align: center;
+  margin-bottom: 1em;
+  font-size: 24px;
   color: black;
-  height: 632px;
-  padding-top: 0;
-  background-color: white;
+  font-weight: 700;
 }
-.input-fields input {
-  display: block;
-  padding: 10px;
-  margin: 25px;
-  width: 300px;
-  border: 1px solid skyblue;
-  border-radius: 5px;
-  position: relative;
-  left: 40%;
-  right: 50%;
+label {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-size: 14 px;
+  font-weight: 600;
+  color: black;
 }
+
 .signup-btn {
   padding: 7px;
   border: 1px solid #1c1c59;
@@ -44,4 +63,26 @@
 }
 .reset:hover {
   background-color: darkred;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.375rem;}
+
+  .mt-3 {
+    margin-top: 1rem!important;
+}
+
+.BBT{
+  display: flex;
+  justify-content: center;
 }

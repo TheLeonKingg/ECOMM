@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import "./UpdateProduct.css"
 
 
 
@@ -66,30 +67,39 @@ const UpdateProduct = () => {
     };
 
     return (
-        <form>
-            <div className="input-fields" >
-                <h1>Update Product</h1>
-                <input type="text" placeholder="Enter Name"
-                    value={name} onChange={(e) => setName(e.target.value)}></input>
+        <>
+            <container className="box">
 
-                <input type="number" placeholder="Enter Price"
-                    value={price} onChange={(e) => setPrice(e.target.value)}></input>
+                <div className="input-fields" >
+                    <h1>Update Product</h1>
 
-                <input type="text" placeholder="Enter Company"
-                    value={company} onChange={(e) => setCompany(e.target.value)}></input>
+                    <form>
+                        <div className="form-group">
+                            <input type="text" placeholder="Enter Name"
+                                value={name} onChange={(e) => setName(e.target.value)}></input> </div>
+                        <div className="form-group">
+                            <input type="number" placeholder="Enter Price"
+                                value={price} onChange={(e) => setPrice(e.target.value)}></input> </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="Enter Company"
+                                value={company} onChange={(e) => setCompany(e.target.value)}></input> </div>
+                        <div className="form-group">
+                            <input type="text" placeholder="Enter Category"
+                                value={category} onChange={(e) => setCategory(e.target.value)}></input> </div>
+                        <div className="form-group">
+                            <input type="number" placeholder="Enter Quantity"
+                                value={quantity} onChange={(e) => setQuantity(e.target.value)}></input> </div>
+                        <div className="form-group">
+                            <input type="file" name="uploaded_file"
+                                onChange={(e) => setImage(e.target.files[0])}></input> </div>
+                    </form>
+                    <button className="update-btn" onClick={updateProduct} >Update Product</button>
 
-                <input type="text" placeholder="Enter Category"
-                    value={category} onChange={(e) => setCategory(e.target.value)}></input>
 
-                <input type="number" placeholder="Enter Quantity"
-                    value={quantity} onChange={(e) => setQuantity(e.target.value)}></input>
+                </div>
+            </container>
+        </>
 
-
-                <input type="file" name="uploaded_file"
-                    onChange={(e) => setImage(e.target.files[0])}></input>
-                <button className="update-btn" onClick={updateProduct} >Update Product</button>
-            </div>
-        </form>
     )
 };
 

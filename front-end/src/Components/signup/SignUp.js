@@ -55,26 +55,43 @@ const SignUp = () => {
     }
 
     return (
-        <Container className='card'>
 
-            <div className="box ">
 
-                <div className="input-fields">
-                    <h1>Register</h1>
-                    <input type="text" placeholder="Enter Name"
-                        value={name} onChange={(e) => setData(e.target.value)}></input>
+        <div className="Auth-form-container">
+            <form className="Auth-form">
 
-                    <input type="text" placeholder="Enter Email"
-                        value={email} onChange={(e) => setEmail(e.target.value)}></input>
-                    <input type="password" placeholder="Enter Password"
-                        value={password} onChange={(e) => setPassword(e.target.value)}></input>
-                    <button className="signup-btn" type="button" color="success" onClick={collectData} >Signup</button>
-                    <button onClick={resetData} className="reset" color="secondary" type="reset" > Reset</button>
+                <div className="Auth-form-content">
+
+
+
+                    <h1 className="Auth-form-title">Sign Up</h1>
+
+                    <div className="form-group mt-3">
+                        <label>Full Name</label>
+                        <input className="form-control" type="text" placeholder="Enter Name"
+                            value={name} onChange={(e) => setData(e.target.value)}></input>
+                    </div>
+
+                    <div className="form-group mt-3">
+                        <label>Email address</label>
+                        <input className="form-control" type="text" placeholder="Enter Email"
+                            value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                    </div>
+
+                    <div className="form-group mt-3">
+                        <label>Password</label>
+                        <input className="form-control" type="password" placeholder="Enter Password"
+                            value={password} onChange={(e) => setPassword(e.target.value)}></input></div>
+                    <div className="BBT mt-3">
+                        <button className="signup-btn" type="button" color="success" onClick={collectData} >Signup</button>
+                        <button onClick={resetData} className="reset" color="secondary" type="reset" > Reset</button> </div>
+
                 </div>
 
-            </div>
+            </form>
+        </div >
 
-        </Container>
+
 
 
     )
