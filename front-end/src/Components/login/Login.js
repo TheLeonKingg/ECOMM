@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Form, useNavigate } from 'react-router-dom'
-import { Card, CardHeader, CardBody, CardTitle, CardText, Container } from "reactstrap";
 import "./login.css"
 
 const Login = () => {

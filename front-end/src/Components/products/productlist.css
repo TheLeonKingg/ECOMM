@@ -1,39 +1,29 @@
 .product-list {
   text-align: center;
-  margin-top: 50px;
- 
-}
-.product-list ul li {
-  display: inline-block;
-  width: 150px;
-  border: 1px solid rgb(32, 181, 240);
-  padding: 10px;
-  height: 30px;
-  text-decoration: none;
- 
-}
-.product-list ul {
-  margin: 0;
+  background-color: aqua;
+  overflow-x:auto;
+  width: 100%;
 
-}
-.button {
+ }
+
+.btn-delete {
   border: 1px solid black;
   color: black;
-  background-color: #2ee6e6;
+  background-color: aqua;
   border-radius: 10px;
-  height: 20px;
-  width: 60px;
+  display: inline-block;
+ 
 }
-.button:hover {
+
+{/* button css*/}
+.btn-delete:hover {
   background-color: darkred;
   transition: 0.7s;
   color: white;
 }
 .Btn-update{
-  height: 20px;
-  width: 60px;
-  margin: 0;
-  background-color: #2ee6e6;
+display: inline-block;
+  background-color: aqua;
   color: black;
   border-radius: 8px;
   margin-left: 7px;
@@ -45,4 +35,24 @@
 .Btn-update:hover{
   background-color: lightsalmon;
   color: white;
+}
+.table{
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x:auto;
+  width: 100%;
+}
+.tbody:hover{
+  background-color: grey;
+  color: white;
+ 
+}
+.table, th, td{
+  border: 1px solid black;
+}
+.table,th , td{
+
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
 }

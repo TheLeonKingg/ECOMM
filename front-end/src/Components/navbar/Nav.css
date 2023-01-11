@@ -4,6 +4,8 @@
   display: flex;
   background-color: #880E4F;
   list-style-type: none;
+  overflow-x:auto;
+  width: 100%;
 }
 .nav-ul li a {
   text-decoration: none;
@@ -51,9 +53,14 @@
   height: 30px;
   border-color: #880E4F;
   border: 1px solid #1c1c59;
+  overflow-x:auto;
 
 }
 .Btn-1:hover{
   background-color: deepskyblue;
   color: white;
+}
+.Btn-2{
+  float: right;
+
 }

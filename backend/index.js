@@ -26,33 +26,33 @@ app.use(cors());
 
 
 
-app.use("/signup",signupRoute );
+app.use("/signup", signupRoute);
 
-app.use("/login" , loginRoute);
+app.use("/login", loginRoute);
 
-app.use('/deleteAccount/' , verifyToken ,deleteUser )
+app.use('/deleteAccount/', verifyToken, deleteUser)
 
-app.use('/add-product',upload,verifyToken,addProductRoute);
+app.use('/add-product', upload, verifyToken, addProductRoute);
 
 app.use('/getAllProducts', verifyToken, getAllProductRoute);
 
-app.use('/delete-product/', verifyToken , deleteProductRoute);
+app.use('/delete-product/', verifyToken, deleteProductRoute);
 
-app.use('/product/', verifyToken,singleProductRoute);
+app.use('/product/', verifyToken, singleProductRoute);
 
-app.use('/updateProduct/', upload, verifyToken,updateProductRoute);
+app.use('/updateProduct/', upload, verifyToken, updateProductRoute);
 
-app.use('/search/' , verifyToken ,searchProductRoute);
+app.use('/search/', verifyToken, searchProductRoute);
 
-app.use('/addToCart/', upload, verifyToken , addProductToCart );
+app.use('/addToCart/', upload, verifyToken, addProductToCart);
 
-app.use('/deleteCartItem/', verifyToken , deleteCartItem );
+app.use('/deleteCartItem/', verifyToken, deleteCartItem);
 
-app.use('/addAddress/',verifyToken,userAddress);
+app.use('/addAddress/', verifyToken, userAddress);
 
-app.use('/updateAddress/',verifyToken , updateAddress);
+app.use('/updateAddress/', verifyToken, updateAddress);
 
-app.use('/getAddress/',verifyToken,getAddress);
+app.use('/getAddress/', verifyToken, getAddress);
 
 
 app.listen(5000);

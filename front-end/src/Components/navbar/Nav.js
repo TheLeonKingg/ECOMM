@@ -15,9 +15,9 @@ const Nav = () => {
             auth ? <ul className="nav-ul">
                 <li><Button className="Btn-1"><Link to="/">Products</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><Button className="Btn-1"><Link to="/add">Add Product</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><Button className="Btn-1"><Link to="/update/:id">Update</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><Button className="Btn-1"><Link to="/profile">Profile</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
                 <li><Button className="Btn-1"><Link onClick={logout} to="/signup">Logout ({JSON.parse(auth).name})</Link></Button></li>
+                <li><Button className="Btn-2"><Link to="/">Cart</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
             </ul>
                 :
                 <ul className="nav-ul nav-link-right">
