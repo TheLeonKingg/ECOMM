@@ -24,7 +24,7 @@
   background-color: darkgreen;
   color: white;
   height: 35px;
-  border-width: 0;
+
 }
 
 .login {
@@ -33,7 +33,7 @@
   background-color: #0047ab;
   color: white;
   height: 35px;
-  border-width: 0;
+
 }
 .signup:hover,
 .signup:active {
@@ -50,10 +50,10 @@
 .Btn-1{
   background-color: white;
   border-radius: 10px;
-  height: 30px;
   border-color: #880E4F;
   border: 1px solid #1c1c59;
-  overflow-x:auto;
+  height: 30px;
+  
 
 }
 .Btn-1:hover{
@@ -61,6 +61,14 @@
   color: white;
 }
 .Btn-2{
-  float: right;
+  background-color: white;
+  border-radius: 10px;
+  border-color: #880E4F;
+  border: 1px solid #1c1c59;
+  margin-left: 15px;
+  height: 30px;
+  
+  
+  
 
 }

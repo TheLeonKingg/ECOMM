@@ -7,12 +7,12 @@ import "./UpdateProduct.css"
 
 
 const UpdateProduct = () => {
-    const [name, setName] = React.useState({});
-    const [price, setPrice] = React.useState({});
-    const [company, setCompany] = React.useState({});
-    const [category, setCategory] = React.useState({});
-    const [quantity, setQuantity] = React.useState({});
-    const [image, setImage] = React.useState({});
+    const [name, setName] = useState({});
+    const [price, setPrice] = useState({});
+    const [company, setCompany] = useState({});
+    const [category, setCategory] = useState({});
+    const [quantity, setQuantity] = useState({});
+    const [image, setImage] = useState({});
     const params = useParams();
     const navigate = useNavigate();
 
@@ -75,21 +75,27 @@ const UpdateProduct = () => {
 
                     <form>
                         <div className="form-group">
+                            <label>Name</label>
                             <input type="text" placeholder="Enter Name"
                                 value={name} onChange={(e) => setName(e.target.value)}></input> </div>
                         <div className="form-group">
+                            <label>Price</label>
                             <input type="number" placeholder="Enter Price"
                                 value={price} onChange={(e) => setPrice(e.target.value)}></input> </div>
                         <div className="form-group">
+                            <label>Company</label>
                             <input type="text" placeholder="Enter Company"
                                 value={company} onChange={(e) => setCompany(e.target.value)}></input> </div>
                         <div className="form-group">
+                            <label>Category</label>
                             <input type="text" placeholder="Enter Category"
                                 value={category} onChange={(e) => setCategory(e.target.value)}></input> </div>
                         <div className="form-group">
+                            <label>Quantity</label>
                             <input type="number" placeholder="Enter Quantity"
                                 value={quantity} onChange={(e) => setQuantity(e.target.value)}></input> </div>
                         <div className="form-group">
+                            <label>Image</label>
                             <input type="file" name="uploaded_file"
                                 onChange={(e) => setImage(e.target.files[0])}></input> </div>
                     </form>

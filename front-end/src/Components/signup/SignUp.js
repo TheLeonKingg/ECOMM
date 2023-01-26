@@ -1,13 +1,13 @@
 import React, { useState, useEffect, } from "react";
 import { useNavigate } from 'react-router-dom'
-import { Container } from "reactstrap";
+import { Button } from "reactstrap";
 import './SignUp.css';
 
 
 const SignUp = () => {
-    const [name, setData] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [name, setData] = useState({ name: '' });
+    const [email, setEmail] = useState({ email: '' });
+    const [password, setPassword] = useState({ password: '' });
     const navigate = useNavigate();
     const collectData = async () => {
         console.log(name, email, password);
@@ -32,27 +32,12 @@ const SignUp = () => {
     })
 
 
-    const handleChange = (event, property) => {
-
-        //Dynamic setting the value
-        setData({ [property]: event.target.value })
-    };
     const resetData = () => {
-        setData({
-            name: '',
-            email: '',
-            password: '',
-            about: '',
 
-        })
+
+
     };
 
-
-
-    const submitForm = (event) => {
-        event.preventDefault()
-
-    }
 
     return (
 
@@ -84,7 +69,7 @@ const SignUp = () => {
                             value={password} onChange={(e) => setPassword(e.target.value)}></input></div>
                     <div className="BBT mt-3">
                         <button className="signup-btn" type="button" color="success" onClick={collectData} >Signup</button>
-                        <button onClick={resetData} className="reset" color="secondary" type="reset" > Reset</button> </div>
+                        <Button onClick={(resetData)} className="reset" color="secondary" type="reset" > Reset</Button> </div>
 
                 </div>
 
