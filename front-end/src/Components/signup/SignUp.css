@@ -1,22 +1,27 @@
-
 .Auth-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 78vh;
-  background-color: wheat;
+  height: 86vh;
+  background: url(./wp3537557-e-commerce-wallpapers.jpg);
+  background-size: cover;
+
 }
+
 .Auth-form {
   align-items: center;
   width: 420px;
-  padding-top: 30px;
+  padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
-  border-radius: 8px;
-  background-color: lavenderblush;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.33);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
+
 .Auth-form-content {
   padding-left: 12%;
   padding-right: 12%;
@@ -24,11 +29,11 @@
 
 .Auth-form-title {
   text-align: center;
-  margin-bottom: 1em;
-  font-size: 24px;
+  font-size: 50px;
   color: black;
-  font-weight: 700;
+  font-weight: 400;
 }
+
 label {
   display: inline-block;
   justify-content: center;
@@ -48,6 +53,7 @@ label {
   font-size: 15px;
   margin: 2px;
 }
+
 .signup-btn:hover {
   background-color: darkgreen;
 }
@@ -61,9 +67,11 @@ label {
   width: 76px;
   font-size: 15px;
 }
+
 .reset:hover {
   background-color: darkred;
 }
+
 .form-control {
   display: block;
   width: 100%;
@@ -76,13 +84,14 @@ label {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   appearance: none;
-  border-radius: 0.375rem;}
-
-  .mt-3 {
-    margin-top: 1rem!important;
+  border-radius: 0.375rem;
 }
 
-.BBT{
+.mt-3 {
+  margin-top: 1rem !important;
+}
+
+.BBT {
   display: flex;
   justify-content: center;
 }

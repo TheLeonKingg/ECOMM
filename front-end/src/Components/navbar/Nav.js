@@ -1,37 +1,77 @@
-import React from "react";
-import './Nav.css'
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate, NavLink as ReactLink } from "react-router-dom";
 import { Button } from 'reactstrap'
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, } from 'reactstrap';
+import './Nav.css'
 
-const Nav = () => {
+
+const New = (args) => {
     const auth = localStorage.getItem('user');
     const navigate = useNavigate();
     const logout = () => {
         localStorage.clear();
         navigate("/signup")
     }
-    return (
-        <div className="demo">{
-            auth ? <ul className="nav-ul">
-                <li><Button className="Btn-1"><Link to="/">Products</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><Button className="Btn-1"><Link to="/add">Add Product</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><Button className="Btn-1"><Link to="/profile">Profile</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                <li><Button className="Btn-1"><Link onClick={logout} to="/signup">Logout ({JSON.parse(auth).name})</Link></Button></li>
-                <li><Button className="Btn-2"><Link to={"/cart"}>Cart</Link></Button></li>&nbsp;&nbsp;&nbsp;&nbsp;
-            </ul>
-                :
-                <ul className="nav-ul nav-link-right">
-                    <li><Link to="/signup">
-                        <Button className="signup">Signup</Button>
-                    </Link></li>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <li><Link to="/login">
-                        <Button className="login">Login</Button>
-                    </Link></li>
+    const [isOpen, setIsOpen] = useState(false);
 
-                </ul>
-        }
-        </div>
+    const toggle = () => setIsOpen(!isOpen);
+
+    return (
+        <>
+
+            <div>
+
+
+                <Navbar style={{ backgroundColor: "Black" }} {...args}>
+                    <NavbarBrand style={{ color: "white" }} tag={ReactLink} to='/'>Welcome to Bulbkart</NavbarBrand>
+                    <NavbarToggler style={{ backgroundColor: "white" }} onClick={toggle} />
+
+                    <Collapse isOpen={isOpen} navbar>
+                        {auth ?
+                            <Nav className="me-auto" navbar>
+                                <NavItem>
+                                    <NavLink style={{ color: "white" }} tag={ReactLink} to='/'>Products List</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink style={{ color: "white" }} tag={ReactLink} to='/add'>Add Products</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink style={{ color: "white" }} tag={ReactLink} to='/profile'>Profile </NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink style={{ color: "white" }} onClick={logout} tag={ReactLink} to='/signup'>
+                                        Logout
+                                    </NavLink>
+                                    <NavLink style={{ color: "white" }} tag={ReactLink} to='/cart'>
+                                        Cart
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
+                            :
+                            <>
+                                <Nav>
+                                    <NavItem>
+                                        <NavLink style={{ color: "white" }} tag={ReactLink} to='/signup'>Signup</NavLink>
+                                    </NavItem>
+                                </Nav>
+                                <Nav>
+                                    <NavItem>
+                                        <NavLink style={{ color: "white" }} tag={ReactLink} to='/login'>Login</NavLink>
+                                    </NavItem>
+                                </Nav>
+
+                            </>
+                        }
+                    </Collapse>
+
+
+
+                </Navbar>
+            </div>
+
+        </>
+
     )
 }
 
-export default Nav;
+export default New;

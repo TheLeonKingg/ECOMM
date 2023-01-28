@@ -1,0 +1,7 @@
+.App {
+
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+    overflow-y: hidden;
+    /* Add vertical scrollbar */
+}

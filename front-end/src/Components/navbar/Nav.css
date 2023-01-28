@@ -1,12 +1,16 @@
+* {
+  overflow: hidden;
+}
+
 .nav-ul {
   padding: 16px;
   margin: 0;
   display: flex;
   background-color: #880E4F;
   list-style-type: none;
-  overflow-x:auto;
-  width: auto;
+  width: 100vw;
 }
+
 .nav-ul li a {
   text-decoration: none;
   color: black;
@@ -18,57 +22,73 @@
   position: relative;
   left: 87em;
 }
+
 .signup {
-  margin-right: -15px;
+
   border-radius: 8px;
   background-color: darkgreen;
   color: white;
   height: 35px;
+  display: flex;
+  align-items: flex-start;
 
 }
 
 .login {
-  margin-right: 0x;
+
   border-radius: 5px;
   background-color: #0047ab;
   color: white;
   height: 35px;
 
 }
+
 .signup:hover,
 .signup:active {
   background-color: white;
   transition: 0.7s;
   color: darkgreen;
-    
+
 }
+
 .login:hover {
   background-color: white;
   color: #0047ab;
   transition: 0.7s;
 }
-.Btn-1{
+
+.Btn-1 {
   background-color: white;
   border-radius: 10px;
   border-color: #880E4F;
   border: 1px solid #1c1c59;
   height: 30px;
-  
+
 
 }
-.Btn-1:hover{
+
+.Btn-1:hover {
   background-color: deepskyblue;
   color: white;
 }
-.Btn-2{
+
+.Btn-2 {
   background-color: white;
   border-radius: 10px;
   border-color: #880E4F;
   border: 1px solid #1c1c59;
   margin-left: 15px;
   height: 30px;
-  
-  
-  
+}
 
+.demo {
+  width: 100vw;
+}
+
+.nav-link-right {
+  background-color: #880E4F;
+  display: flex;
+  align-items: center;
+  height: 75px;
+  justify-content: center;
 }

@@ -1,10 +1,11 @@
 .product-list {
   text-align: center;
   background-color: aqua;
-  overflow-x:auto;
+  overflow-x: auto;
   width: 100%;
+  box-sizing: border-box;
 
- }
+}
 
 .btn-delete {
   border: 1px solid black;
@@ -15,16 +16,20 @@
   margin-top: 4px;
   margin-bottom: 4px;
   cursor: pointer;
- 
+
 }
 
-{/* button css*/}
+  {
+  /* button css*/
+}
+
 .btn-delete:hover {
   background-color: darkred;
   transition: 0.7s;
   color: white;
 }
-.Btn-update{
+
+.Btn-update {
   background-color: aqua;
   color: black;
   border-radius: 8px;
@@ -35,35 +40,45 @@
   height: 30px;
   cursor: pointer;
 
-  
+
 }
-.Btn-update:hover{
+
+.Btn-update:hover {
   background-color: lightsalmon;
   color: white;
 }
-.table{
+
+.table {
   margin-left: auto;
   margin-right: auto;
-  overflow-x:auto;
+  overflow-x: auto;
   width: 100%;
 }
-.tbody:hover{
+
+.tbody:hover {
   background-color: grey;
   color: white;
- 
+
 }
-.table, th, td{
+
+.table,
+th,
+td {
   border: 1px solid black;
 }
-.table,th , td{
+
+.table,
+th,
+td {
 
   padding-left: 2px;
   padding-right: 2px;
   text-align: center;
 }
-.search-product-box{
+
+.search-product-box {
   margin: 20px;
-  width:400px;
+  width: 400px;
   height: 35px;
   text-align: center;
   color: black;
