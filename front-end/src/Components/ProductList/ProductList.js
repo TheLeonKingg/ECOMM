@@ -105,8 +105,8 @@ const ProductList = () => {
 
                                 </tr>
                             )
-                                : <div>No result found</div>
-                        }
+
+                                : <tr><td>No result found</td></tr>}
                     </tbody>
                 </table>
             </div>

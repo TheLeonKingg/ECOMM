@@ -1,21 +1,24 @@
 import React, { useState, useEffect, } from "react";
 import { useNavigate } from 'react-router-dom'
-import { Button, Form } from "reactstrap";
+import { Button } from "reactstrap";
+import { useForm } from "react-hook-form";
 import './SignUp.css';
 
 
 const SignUp = () => {
-    const [data, setData] = useState({ name: '', });
+    const [name, setName] = useState({ name: '', });
     const [email, setEmail] = useState({ email: '', });
     const [password, setPassword] = useState({ password: '', });
     const navigate = useNavigate();
 
-    const collectData = async () => {
-        console.log(data);
+
+    const collectData = async (e) => {
+
+        console.log(name, email, password);
 
         let result = await fetch('http://localhost:5000/signup', {
             method: 'post',
-            body: JSON.stringify({ data }),
+            body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' },
         })
         result = await result.json();
@@ -24,6 +27,7 @@ const SignUp = () => {
             localStorage.setItem('user', JSON.stringify(result));
             navigate('/');
         }
+
     }
 
     useEffect(() => {
@@ -34,58 +38,70 @@ const SignUp = () => {
     })
 
     const handleChange = (event, property) => {
-
-        //Dynamic setting the value
-        setData({ ...data, [property]: event.target.value })
+        setName({ ...name, [property]: event.target.value })
         setEmail({ ...email, [property]: event.target.value })
         setPassword({ ...password, [property]: event.target.value })
     };
 
     const resetData = () => {
-        setData({ name: '', });
+        setName({ name: '', });
         setEmail({ email: '', });
         setPassword({ password: '', })
-
-
-
     };
+
+
 
 
     return (
 
-
         <div className="Auth-form-container">
 
-            <form className="Auth-form">
+            <form className="Auth-form" >
 
                 <div className="Auth-form-content">
                     <h1 className="Auth-form-title">Sign Up</h1>
 
                     <div className="form-group mt-3">
                         <label>Full Name</label>
+
                         <input className="form-control" type="text" placeholder="Enter Name"
-                            value={data.name} onChange={(e) => handleChange(e, 'name')}></input>
+                            value={name.name} onChange={(e) => handleChange(e, 'name')}
+                        />
+
                     </div>
 
                     <div className="form-group mt-3">
                         <label>Email address</label>
                         <input className="form-control" type="text" placeholder="Enter Email"
-                            value={email.email} onChange={(e) => handleChange(e, 'email')}></input>
+                            value={email.email} onChange={(e) => handleChange(e, 'email')}
+                        />
+
                     </div>
 
                     <div className="form-group mt-3">
                         <label>Password</label>
                         <input className="form-control" type="password" placeholder="Enter Password"
-                            value={password.password} onChange={(e) => handleChange(e, 'password')}></input></div>
+                            value={password.password} onChange={(e) => handleChange(e, 'password')}
+                        />
+
+                    </div>
                     <div className="BBT mt-3">
-                        <button className="signup-btn" type="button" color="success" onClick={collectData} >Signup</button>
-                        <Button onClick={(resetData)} className="reset" color="secondary" type="reset" > Reset</Button> </div>
-
+                        <button className="signup-btn" type="button" color="success" onClick={collectData} >
+                            Signup
+                        </button>
+                        <Button onClick={(resetData)} className="reset" color="secondary" type="reset" >
+                            Reset
+                        </Button>
+                    </div>
                 </div>
-
             </form>
         </div >
     )
 };
 
-export default SignUp; 
+export default SignUp;
+
+
+
+
+
