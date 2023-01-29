@@ -60,8 +60,9 @@ const ProductList = () => {
         }
     };
     const dispatch = useDispatch();
-    const handleAddToCart = (item) => {
 
+    const handleAddToCart = (item) => {
+        item.quantity = 1;
         dispatch(addToCart(item));
         navigate("/cart");
 
