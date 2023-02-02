@@ -15,16 +15,20 @@ const New = (args) => {
 
     const toggle = () => setIsOpen(!isOpen);
 
+
     return (
         <>
 
             <div>
                 <Navbar style={{ backgroundColor: "Black" }} {...args}>
                     <NavbarBrand style={{ color: "white" }} tag={ReactLink} to='/'>Welcome to Bulbkart</NavbarBrand>
+
                     <NavbarToggler style={{ backgroundColor: "white" }} onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         {auth ?
+
                             <Nav className="me-auto" navbar>
+
                                 <NavItem>
                                     <NavLink style={{ color: "white" }} tag={ReactLink} to='/'>Products List</NavLink>
                                 </NavItem>
